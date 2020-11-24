@@ -1,0 +1,43 @@
+<template>
+    <!-- <div style="height: 300px;">
+        <h1> Financial Services Account Listing</h1>
+        <lightning-datatable
+                key-field="id"
+                data={accounts.data}
+                columns={columns}>
+        </lightning-datatable>
+        <template if:true={accounts.error}>
+            <p>Oops! Error occured!</p>
+        </template>
+    </div> -->
+    <lightning-card>
+            <!-- <div slot="title" class="slds-grid">
+                <div class="slds-col"><lightning-icon icon-name="action:email" size="large"></lightning-icon></div>
+                <div class="slds-col slds-size_6-of-6 slds-p-top_small" >
+                    Financial Services Account Listing
+                </div>
+            </div> -->
+            <!-- <lightning-button slot="actions" label="Fetch Emails" alternative-text="Fetch Emails" onclick={handleClick}></lightning-button> -->
+            <!-- <lightning-input type = "search" onchange = {handleKeyChange} class = "slds-m-bottom_small" label = "Search" ></lightning-input> -->
+            <p class="slds-p-horizontal_small">
+                <template if:true={accounts.data}>
+                    <lightning-datatable
+                        key-field="id"
+                        data={accounts.data}
+                        columns={columns}
+                        onsave={handleSave}
+                        draft-values={draftValues} >
+                    </lightning-datatable>
+                </template>
+                <!-- <template if:true={accounts.error}>
+                    <div class="slds-text-align_center">
+                        <p class="slds-text-heading_small">
+                            <template if:true= {error.body.message}>
+                                {error.body.message}
+                            </template>
+                        </p>
+                    </div>
+                </template> -->
+            </p>
+        </lightning-card>    
+</template>
